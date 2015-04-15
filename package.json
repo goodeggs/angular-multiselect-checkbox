@@ -1,5 +1,5 @@
 {
-  "name": "st-multiselect-checkbox",
+  "name": "angular-multiselect-checkbox",
   "version": "1.0.0",
   "description": "multiselect checkbox built for smart table",
   "author": "Good Eggs <open-source@goodeggs.com>",
@@ -13,16 +13,16 @@
   "main": "src/index.coffee",
   "repository": {
     "type": "git",
-    "url": "git://github.com/goodeggs/st-multiselect-checkbox.git"
+    "url": "git://github.com/goodeggs/angular-multiselect-checkbox.git"
   },
-  "homepage": "https://github.com/goodeggs/st-multiselect-checkbox",
-  "bugs": "https://github.com/goodeggs/st-multiselect-checkbox/issues",
+  "homepage": "https://github.com/goodeggs/angular-multiselect-checkbox",
+  "bugs": "https://github.com/goodeggs/angular-multiselect-checkbox/issues",
   "dependencies": {
     "angular-indeterminate-checkbox": "^0.1.0"
   },
   "devDependencies": {},
   "publishConfig": {
-    "registry": "https://goodeggs.registry.nodejitsu.com/",
+    "registry": "https://registry.npmjs.org/",
     "always-auth": true
   }
 }

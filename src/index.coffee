@@ -8,7 +8,7 @@ table.table(st-table='displayRows' st-safe-src='rows')
   thead
     tr
       th
-        st-multiselect-checkbox(rows='displayRows')
+        multiselect-checkbox(models='displayRows')
   tbody
     tr(ng-repeat='row in displayRows')
       td
@@ -18,21 +18,20 @@ table.table(st-table='displayRows' st-safe-src='rows')
 
 require 'angular-indeterminate-checkbox'
 
-angular.module __filename, [
-  'smart-table'
+angular.module 'multiselectCheckbox', [
   'ngIndeterminateCheckbox'
 ]
 
-.directive 'stMultiselectCheckbox', ->
+.directive 'multiselectCheckbox', ->
   restrict: 'E'
   template: require './template'
   scope:
-    rows: '='
+    models: '='
   link: (scope, element, attrs) ->
     scope.checked = false
 
     getSelectedRows = ->
-      scope.rows?.filter((row) -> row?.isSelected).length
+      scope.models?.filter((row) -> row?.isSelected).length
 
     isSelectable = (row) ->
       return true unless row.isSelectable?
@@ -40,7 +39,7 @@ angular.module __filename, [
 
     scope.$watch 'checked', (newValue, oldValue) ->
       return if newValue is oldValue
-      row.isSelected = newValue for row in scope.rows when isSelectable(row)
+      row.isSelected = newValue for row in scope.models when isSelectable(row)
 
     scope.$watch getSelectedRows, (count) ->
       debugger
@@ -49,7 +48,7 @@ angular.module __filename, [
         debugger
         scope.checked = false
         scope.indeterminate = false
-      else if count is scope.rows?.filter(isSelectable).length
+      else if count is scope.models?.filter(isSelectable).length
         debugger
         scope.checked = true
         scope.indeterminate = false
@@ -57,4 +56,4 @@ angular.module __filename, [
         debugger
         scope.indeterminate = true
 
-module.exports = __filename
+module?.exports = 'multiselectCheckbox'
