@@ -42,18 +42,14 @@ angular.module 'multiselectCheckbox', [
       row.isSelected = newValue for row in scope.models when isSelectable(row)
 
     scope.$watch getSelectedRows, (count) ->
-      debugger
       return if count is undefined
       if count is 0
-        debugger
         scope.checked = false
         scope.indeterminate = false
       else if count is scope.models?.filter(isSelectable).length
-        debugger
         scope.checked = true
         scope.indeterminate = false
       else
-        debugger
         scope.indeterminate = true
 
 module?.exports = 'multiselectCheckbox'
