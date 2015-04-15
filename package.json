@@ -1,0 +1,28 @@
+{
+  "name": "st-multiselect-checkbox",
+  "version": "1.0.0",
+  "description": "multiselect checkbox built for smart table",
+  "author": "Good Eggs <open-source@goodeggs.com>",
+  "contributors": [
+    "dannynelson <danny@goodeggs.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "smart-table multiselect checkbox"
+  ],
+  "main": "src/index.coffee",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/goodeggs/st-multiselect-checkbox.git"
+  },
+  "homepage": "https://github.com/goodeggs/st-multiselect-checkbox",
+  "bugs": "https://github.com/goodeggs/st-multiselect-checkbox/issues",
+  "dependencies": {
+    "angular-indeterminate-checkbox": "^0.1.0"
+  },
+  "devDependencies": {},
+  "publishConfig": {
+    "registry": "https://goodeggs.registry.nodejitsu.com/",
+    "always-auth": true
+  }
+}
