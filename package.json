@@ -10,7 +10,7 @@
   "keywords": [
     "smart-table multiselect checkbox"
   ],
-  "main": "src/index.coffee",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/goodeggs/angular-multiselect-checkbox.git"
@@ -20,7 +20,13 @@
   "dependencies": {
     "angular-indeterminate-checkbox": "^0.1.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "coffee-script": "^1.12.1"
+  },
+  "scripts": {
+    "build": "rm -rf build && npm run build:safe",
+    "build:safe": "coffee --compile --bare --output build src && cp package.json build/"
+  },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "always-auth": true
