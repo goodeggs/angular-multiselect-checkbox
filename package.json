@@ -24,8 +24,8 @@
     "coffee-script": "^1.12.1"
   },
   "scripts": {
-    "build": "rm -rf build && npm run build:safe",
-    "build:safe": "coffee --compile --bare --output build src && cp package.json build/"
+    "build": "rm -rf build/ && cp -R src build && npm run build:safe",
+    "build:safe": "coffee --bare --compile build/ && cp package.json build/"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
